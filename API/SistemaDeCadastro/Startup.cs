@@ -32,6 +32,18 @@ namespace SistemaDeCadastro
             services.AddDbContext<Contexto>(options =>
                                   options.UseSqlServer(Configuration.GetConnectionString("SistemaDeCadastroContext")));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000")
+                                                   .AllowAnyHeader()
+                                                   .AllowAnyMethod();
+                    }
+                );
+            });
+
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SistemaDeCadastro", Version = "v1" });
             });
@@ -57,6 +69,8 @@ namespace SistemaDeCadastro
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("CorsPolicy");
 
             app.UseEndpoints(endpoints =>
             {
