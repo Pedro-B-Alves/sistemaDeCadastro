@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.tela{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.conteudoCadastro{
+    width: 22vw;
+    height: 55vh;
+    border: solid;
+    border-color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+.formCadastro{
+    width: 22vw;
+    height: 48vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.tituloCadastro{
+    text-transform: uppercase;
+    font-family: raleway;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.nomeAtributo{
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.input{
+    width: 15vw;
+    height: 5vh;
+    border-radius: 1em;
+}
+
+.botaoCadastro{
+    width: 15vw;
+    height: 5vh;
+    border-radius: 1em;
+    background-color: #FA7B3B;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}

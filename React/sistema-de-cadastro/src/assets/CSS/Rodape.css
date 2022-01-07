@@ -1,0 +1,15 @@
+.rodape{
+    width: 100vw;
+    height: 10vh;
+    background-color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudoRodape{
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: bold;
+    color: #FFFFFF;
+}
