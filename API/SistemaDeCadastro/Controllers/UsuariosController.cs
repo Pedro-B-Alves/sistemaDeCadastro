@@ -5,6 +5,7 @@ using SistemaDeCadastro.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace SistemaDeCadastro.Controllers
@@ -41,7 +42,7 @@ namespace SistemaDeCadastro.Controllers
             {
                 _context.Usuarios.Add(usuarios);
                 _context.SaveChanges();
-                return StatusCode(201);
+                return StatusCode((int)HttpStatusCode.Created);
             }
             catch (Exception ex)
             {
@@ -67,14 +68,13 @@ namespace SistemaDeCadastro.Controllers
                 {
                     usuarioBuscado.Idade = usuarioAtualizado.Idade;
                 }
-                if (usuarioAtualizado.Sexo != null)
-                {
+
                     usuarioBuscado.Sexo = usuarioAtualizado.Sexo;
-                }
+        
                 _context.Usuarios.Update(usuarioBuscado);
                 _context.SaveChanges();
 
-                return StatusCode(204);
+                return StatusCode((int)HttpStatusCode.NoContent);
             }
 
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace SistemaDeCadastro.Controllers
                 _context.Usuarios.Remove(usuarioBuscado);
                 _context.SaveChanges();
 
-                return StatusCode(204);
+                return StatusCode((int)HttpStatusCode.NoContent);
             }
             catch (Exception ex)
 

@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace SistemaDeCadastro
@@ -47,6 +48,20 @@ namespace SistemaDeCadastro
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SistemaDeCadastro", Version = "v1" });
             });
+
+            services
+                .AddMvc()
+                // Or .AddControllers(...)
+                .AddJsonOptions(opts =>
+                {
+                    var enumConverter = new JsonStringEnumConverter();
+                    opts.JsonSerializerOptions.Converters.Add(enumConverter);
+                });
+
+            services
+                .AddControllersWithViews() // or AddControllers() in a Web API
+                .AddJsonOptions(options =>
+                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

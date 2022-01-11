@@ -30,10 +30,14 @@ namespace SistemaDeCadastro.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Sexo")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("SexoString")
+                        .IsRequired()
+                        .HasMaxLength(9)
+                        .HasColumnType("nvarchar(9)")
+                        .HasColumnName("Sexo");
 
                     b.HasKey("Id");
 
