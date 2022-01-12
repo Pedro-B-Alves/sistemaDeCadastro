@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EnitityFrameworkStoreEnumsAsString
+namespace SistemaDeCadastro.Enuns
 {
     public static class StringExtensions
     {

@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Cadastro from './pages/cadastro/Cadastro';
-import Listagem from './pages/listagem/Listagem'
+import Listagem from './pages/listagem/Listagem';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Cadastro />
+    <Listagem />
   </React.StrictMode>,
   document.getElementById('root')
 );

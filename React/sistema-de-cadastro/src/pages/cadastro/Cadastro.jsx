@@ -2,14 +2,14 @@ import "../../assets/CSS/Cadastro.css"
 import Cabecalho from "../../companents/Cabecalho"
 import Rodape from "../../companents/Rodape"
 import React, { useState } from 'react';
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { api } from "../../services/api";
 
 export default function Cadastro() {
     const [ nome, setNome ] = useState( '' );
     const [ dataNasc, setDataNasc ] = useState( new Date() );
     const [ sexo, setSexo ] = useState( '' );
-    const [ mensagem, setMesagem ] = (2);
+    const [ mensagem, setMesagem ] = useState(2);
 
     const cadastrarUsuario = async (e) => {
         e.preventDefault();
@@ -17,15 +17,22 @@ export default function Cadastro() {
         console.log(dataNasc);
         console.log(sexo);
         
-        const { status } = await api.post('/api/Usuarios', {
-            nome : nome,
-            idade : dataNasc,
-            sexo : sexo
-        })
-        if (status === 201) {
-            console.log("Usuário foi cadastrado");
-        }else{
-            console.log("Usuário não foi cadastrado")
+        try{
+            const { status } = await api.post('/api/Usuarios', {
+                nome : nome,
+                idade : dataNasc,
+                sexo : sexo
+            })
+            if (status === 201) {
+                console.log("Usuário foi cadastrado");
+                setMesagem(1);
+            }else{
+                console.log("Usuário não foi cadastrado");
+                setMesagem(0);
+            }
+        }catch{
+            console.log("Usuário não foi cadastrado");
+            setMesagem(0);
         }
     };
 
@@ -52,6 +59,14 @@ export default function Cadastro() {
                             <option value="Outros">Outros</option>
                         </select>
                     </div>
+                    {
+                        mensagem === 1 &&
+                        <p className="sucesso">O usuário foi cadastrado com sucesso</p>
+                    }
+                    {
+                        mensagem === 0 &&
+                        <p className="falha">O usuário não foi cadastrado</p>
+                    }
                     <button className="botaoCadastro" type="submit">Cadastrar</button>
                 </form>
             </section>

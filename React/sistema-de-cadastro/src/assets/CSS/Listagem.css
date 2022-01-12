@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -10,5 +12,41 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+}
+
+.conteudo{
+    width: 60vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloListagem{
+    text-transform: uppercase;
+    font-family: raleway;
+    font-size: 2.8em;
+    font-weight: bold;
+    padding-bottom: 5vh;
+}
+
+.tabelaListagem{
+    width: 60vw;
+}
+
+.nomeAtributo{
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.colunaAtributo{
+    font-family: Lato;
+    font-size: 0.95em;
+    padding-bottom: 1.5vh;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 

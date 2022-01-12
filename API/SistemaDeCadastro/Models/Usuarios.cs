@@ -1,5 +1,4 @@
-﻿using EnitityFrameworkStoreEnumsAsString;
-using SistemaDeCadastro.Enum;
+﻿using SistemaDeCadastro.Enuns;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

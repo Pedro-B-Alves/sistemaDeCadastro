@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -47,4 +49,18 @@
     background-color: #FA7B3B;
     text-transform: uppercase;
     color: #FFFFFF;
+}
+
+.sucesso{
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: bold;
+    color: #0b9121;
+}
+
+.falha{
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: bold;
+    color: #830000;
 }
