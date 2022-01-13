@@ -14,6 +14,80 @@
     flex-direction: column;
 }
 
+.modal-background{
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(10, 10, 10, 0.86);
+}
+
+.modal-card{
+    margin: 0 auto;
+    display: block;
+    margin-top: 30vh;
+    width: 30vw;
+    height: 35vh;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tituloExcluir{
+    font-family: raleway;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.dadosExcluir{
+    font-family: Lato;
+    font-size: 1em;
+}
+
+.atributoExcluir{
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.areaAtributos{
+    display: flex;
+    padding-bottom: 1vh;
+}
+
+.areaBt{
+    width: 15vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btNao{
+    width: 7vw;
+    height: 4vh;
+    background-color: #FFFFFF;
+    color: #FA7B3B;
+    text-transform: uppercase;
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 1em;
+}
+
+.btSim{
+    width: 7vw;
+    height: 4vh;
+    background-color: #FA7B3B;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 1em;
+}
+
 .conteudo{
     width: 60vw;
     height: 60vh;
@@ -34,7 +108,7 @@
     width: 60vw;
 }
 
-.nomeAtributo{
+.nomeAtribu{
     font-family: Lato;
     font-size: 1em;
     font-weight: bold;
@@ -49,4 +123,3 @@
     background-color: #000000;
     color: #FFFFFF;
 }
-
