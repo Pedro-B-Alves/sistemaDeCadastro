@@ -53,7 +53,7 @@ export default function Cadastro() {
                     <div>
                         <p className="nomeAtributo">Sexo</p>
                         <select className="input" name="Sexo" required value={sexo} onChange={(event) => setSexo(event.target.value)}>
-                            <option value="" selected>Selecione um valor</option>
+                            <option value="" defaultValue>Selecione um valor</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                             <option value="Outros">Outros</option>

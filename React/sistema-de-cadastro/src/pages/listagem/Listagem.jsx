@@ -12,6 +12,11 @@ export default function Listagem() {
     const [ data, setData]  = useState( new Date() );
     const [ usuario, setUsuario] = useState( [] );
     const [show, setShow] = useState(false);
+    const [showAtualiza, setShowAtualiza] = useState(false);
+    const [ nome, setNome ] = useState( '' );
+    const [ dataNasc, setDataNasc ] = useState( new Date() );
+    const [ sexo, setSexo ] = useState( '' );
+    const [ idUsuario, setIdUsuario ] = useState( 0 );
 
     const listarUsuarios = async () => {
         try{
@@ -41,11 +46,42 @@ export default function Listagem() {
             console.log("Não foi possivel excluir o usuário");
         }
     };
+
+    const atualizarUsuario = async () => {
+        console.log(nome);
+        console.log(dataNasc);
+        console.log(sexo);
+        
+        try{
+            const { status } = await api.put(`/api/Usuarios/${idUsuario}`, {
+                nome : nome,
+                idade : dataNasc,
+                sexo : sexo
+            })
+            if (status === 204) {
+                console.log("O usuário foi atualizado com sucesso");
+                listarUsuarios();
+            }else{
+                console.log("Não foi possivel atualizar o usuário");
+            }
+        }catch{
+            console.log("Não foi possivel atualizar o usuário");
+        }
+    };
     
     const handleModalClose = (e) => {
         const currentClass = e.target.className;
 
         if (currentClass === 'modal-card') {
+            return;
+        }
+        else if (currentClass === 'tituloModal') {
+            return;
+        }
+        else if (currentClass === 'atributoExcluir') {
+            return;
+        }
+        else if (currentClass === 'dadosExcluir') {
             return;
         }
 
@@ -54,6 +90,32 @@ export default function Listagem() {
 
     const handleModalOpen = () => {
         setShow(true);
+    }
+    
+    const handleModalCloseAtualiza = (e) => {
+        const currentClass = e.target.className;
+
+        if (currentClass === 'modalCardAtualiza') {
+            return;
+        }
+        else if (currentClass === 'tituloModal') {
+            return;
+        }
+        else if (currentClass === 'nomeDosAtributos') {
+            return;
+        }
+        else if (currentClass === 'inputListagem') {
+            return;
+        }
+        else if (currentClass === 'opt') {
+            return;
+        }
+
+        setShowAtualiza(false);
+    }
+
+    const handleModalOpenAtualiza = () => {
+        setShowAtualiza(true);
     }
 
     useEffect(() => {
@@ -65,6 +127,14 @@ export default function Listagem() {
         setUsuario(itensListagem);
     };
 
+    const atualizaClick = (itensListagem) => {
+        handleModalOpenAtualiza();
+        setNome(itensListagem.nome);
+        setDataNasc(itensListagem.idade);
+        setSexo(itensListagem.sexo);
+        setIdUsuario(itensListagem.id);
+    };
+
     return (
         <div className="tela">
             <Cabecalho/>
@@ -72,7 +142,7 @@ export default function Listagem() {
                 <div hidden={!show}>
                     <div className="modal-background" onClick={handleModalClose}>
                         <div className="modal-card">
-                            <h1 className="tituloExcluir">Deseja deletar esse usuário?</h1>
+                            <h1 className="tituloModal">Deseja deletar esse usuário?</h1>
                             <div>
                                 <div className="areaAtributos">
                                     <p className="atributoExcluir">Nome: </p>
@@ -90,8 +160,37 @@ export default function Listagem() {
                             <div className="areaBt">
                                 <button className="btNao" onClick={handleModalClose}>Não</button>
                                 <button className="btSim" onClick={() => excluirUsuario()}>Sim</button>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div hidden={!showAtualiza}>
+                    <div className="modal-background" onClick={handleModalCloseAtualiza}>
+                        <div className="modalCardAtualiza">
+                            <h1 className="tituloModal">Altere os dados</h1>
+                            <div>
+                                <p className="nomeDosAtributos">Nome</p>
+                                <input className="inputListagem"  type="text" name="Nome" required value={nome} onChange={(event) => setNome(event.target.value)}></input>
                             </div>
-                            
+                            <div>
+                                <p className="nomeDosAtributos">Data de Nascimento</p>
+                                <input className="inputListagem" type="date" name="Data" value={dataNasc} onChange={(event) => setDataNasc(event.target.value)}></input>
+                            </div>
+                            <div>
+                                <p className="nomeDosAtributos">Sexo</p>
+                                <select className="inputListagem" name="Sexo" required value={sexo} onChange={(event) => setSexo(event.target.value)}>
+                                    <option className="opt" value="">Selecione um valor</option>
+                                    <option className="opt" value="Masculino">Masculino</option>
+                                    <option className="opt" value="Feminino">Feminino</option>
+                                    <option className="opt" value="Outros">Outros</option>
+                                </select>
+                            </div>
+                            <div className="areaBt">
+                                <button className="btNao" onClick={handleModalCloseAtualiza}>Cancelar</button>
+                                <button className="btSim" onClick={() => atualizarUsuario()}>Confirmar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,7 +215,7 @@ export default function Listagem() {
                                             <td className="colunaAtributo">{itensListagem.nome}</td>
                                             <td className="colunaAtributo">{parseInt((data-new Date(itensListagem.idade))/(1000*3600*24)/365.25)}</td>
                                             <td className="colunaAtributo">{itensListagem.sexo}</td>
-                                            <td><img src={anotacao} alt="alterar"/>
+                                            <td><img src={anotacao} onClick={() => atualizaClick(itensListagem)} alt="alterar"/>
                                             <img src={lixo} alt="excluir" onClick={() => excluirClick(itensListagem)}/></td>
                                         </tr>
                                     );

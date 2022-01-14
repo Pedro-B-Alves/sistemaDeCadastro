@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "../assets/CSS/Cabecalho.css";
-import logo from "../assets/img/logo.svg"
+import logo from "../assets/img/logo.svg";
+import { Link } from 'react-router-dom';
 
 export default class Cabecalho extends Component {
     render() {
@@ -9,8 +10,8 @@ export default class Cabecalho extends Component {
                 <div className="conteudoCabecalho">
                     <img className="imgCabecalho" src={logo} alt="intelitrader"/>
                     <div className="areaLink">
-                        <a className="linkCabecalho">Cadastro</a>
-                        <a className="linkCabecalho">Listagem</a>
+                        <Link className="linkCabecalho" to="/">Cadastro</Link>
+                        <Link className="linkCabecalho" to="/Listagem">Listagem</Link>
                     </div>
                 </div>
             </div>
