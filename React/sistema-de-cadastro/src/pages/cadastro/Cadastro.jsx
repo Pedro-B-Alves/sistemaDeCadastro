@@ -2,7 +2,7 @@ import "../../assets/CSS/Cadastro.css"
 import Cabecalho from "../../companents/Cabecalho"
 import Rodape from "../../companents/Rodape"
 import React, { useState } from 'react';
-//import { toast } from "react-toastify";
+import moment from "moment";
 import { api } from "../../services/api";
 
 export default function Cadastro() {
@@ -10,9 +10,9 @@ export default function Cadastro() {
     const [ dataNasc, setDataNasc ] = useState( new Date() );
     const [ sexo, setSexo ] = useState( '' );
     const [ mensagem, setMesagem ] = useState(2);
+    const [show, setShow] = useState(false);
 
-    const cadastrarUsuario = async (e) => {
-        e.preventDefault();
+    const cadastrarUsuario = async () => {
         console.log(nome);
         console.log(dataNasc);
         console.log(sexo);
@@ -36,11 +36,62 @@ export default function Cadastro() {
         }
     };
 
+    const handleModalClose = (e) => {
+        const currentClass = e.target.className;
+
+        if (currentClass === 'modalCard') {
+            return;
+        }
+        else if (currentClass === 'titulo') {
+            return;
+        }
+        else if (currentClass === 'atributoCadastro') {
+            return;
+        }
+        else if (currentClass === 'dadosCadastro') {
+            return;
+        }
+
+        setShow(false);
+    }
+
+    const handleModalOpen = (e) => {
+        e.preventDefault();
+        setShow(true);
+    }
+
     return (
         <div className="tela">
             <Cabecalho/>
             <section>
-                <form className="formCadastro" id="form" onSubmit={cadastrarUsuario}>
+                <div hidden={!show}>
+                    <div className="modalBackground" onClick={handleModalClose}>
+                        <div className="modalCard">
+                            <h1 className="titulo">Os dados estão corretos?</h1>
+                            <div>
+                                <div className="areaDosAtributos">
+                                    <p className="atributoCadastro">Nome: </p>
+                                    <p className="dadosCadastro">{nome}</p>
+                                </div>
+                                <div className="areaDosAtributos">
+                                    <p className="atributoCadastro">Data de Nascimento: </p>
+                                    <p className="dadosCadastro">{moment(dataNasc).format('DD/MM/YYYY')}</p>
+                                </div>
+                                <div className="areaDosAtributos">
+                                    <p className="atributoCadastro">Sexo: </p>
+                                    <p className="dadosCadastro">{sexo}</p>
+                                </div>
+                            </div>
+                            <div className="areaBotao">
+                                <button className="botaoNao" onClick={handleModalClose}>Não</button>
+                                <button className="botaoSim" onClick={() => cadastrarUsuario()}>Sim</button>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <form className="formCadastro" id="form" onSubmit={handleModalOpen}>
                     <h1 className="tituloCadastro">Cadastro</h1>
                     <div>
                         <p className="nomeAtributo">Nome</p>
