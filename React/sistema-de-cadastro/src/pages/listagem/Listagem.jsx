@@ -176,7 +176,7 @@ export default function Listagem() {
                             </div>
                             <div>
                                 <p className="nomeDosAtributos">Data de Nascimento</p>
-                                <input className="inputListagem" type="date" name="Data" value={dataNasc} onChange={(event) => setDataNasc(event.target.value)}></input>
+                                <input className="inputListagem" type="date" name="Data" required value={moment(dataNasc).format('YYYY-MM-DD')} onChange={(event) => setDataNasc(event.target.value)}></input>
                             </div>
                             <div>
                                 <p className="nomeDosAtributos">Sexo</p>

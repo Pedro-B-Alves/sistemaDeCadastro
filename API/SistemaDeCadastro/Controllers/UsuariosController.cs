@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using SistemaDeCadastro.Data;
 using SistemaDeCadastro.Models;
 using System;
@@ -16,11 +17,14 @@ namespace SistemaDeCadastro.Controllers
     public class UsuariosController : Controller
     {
         private readonly Contexto _context;
+        readonly ILogger<UsuariosController> _logger;
 
-        public UsuariosController(Contexto context)
+        public UsuariosController(Contexto context, ILogger<UsuariosController> log)
         {
             _context = context;
+            _logger = log;
         }
+
 
         [HttpGet]
         public IActionResult Get()
@@ -31,6 +35,7 @@ namespace SistemaDeCadastro.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Action Get :: UsuariosController :: problema: " + ex.ToString() + " executou em: " + DateTime.Now.ToString());
                 return BadRequest(ex);
             }
         }
@@ -46,6 +51,7 @@ namespace SistemaDeCadastro.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Action Post :: UsuariosController :: problema: " + ex.ToString() + " executou em: " + DateTime.Now.ToString());
                 return BadRequest(ex);
             }
         }
@@ -58,18 +64,15 @@ namespace SistemaDeCadastro.Controllers
                 Usuarios usuarioBuscado = await _context.Usuarios.FindAsync(id);
                 if (usuarioBuscado == null)
                 {
+                    _logger.LogWarning("Action Put :: UsuariosController :: problema: Usuário não encontrado id: " + id + " executou em: " + DateTime.Now.ToString());
                     return NotFound();
                 }
-                if (usuarioAtualizado.Nome != null)
-                {
-                    usuarioBuscado.Nome = usuarioAtualizado.Nome;
-                }
-                if (usuarioAtualizado.Idade != usuarioBuscado.Idade)
-                {
-                    usuarioBuscado.Idade = usuarioAtualizado.Idade;
-                }
 
-                    usuarioBuscado.Sexo = usuarioAtualizado.Sexo;
+                usuarioBuscado.Nome = usuarioAtualizado.Nome;
+
+                usuarioBuscado.Idade = usuarioAtualizado.Idade;
+
+                usuarioBuscado.Sexo = usuarioAtualizado.Sexo;
         
                 _context.Usuarios.Update(usuarioBuscado);
                 _context.SaveChanges();
@@ -78,8 +81,8 @@ namespace SistemaDeCadastro.Controllers
             }
 
             catch (Exception ex)
-
             {
+                _logger.LogError("Action Put :: UsuariosController :: problema: " + ex.ToString() + " executou em: " + DateTime.Now.ToString());
                 return BadRequest(ex);
             }
         }
@@ -92,6 +95,7 @@ namespace SistemaDeCadastro.Controllers
                 Usuarios usuarioBuscado = await _context.Usuarios.FirstOrDefaultAsync(m => m.Id == id);
                 if (usuarioBuscado == null)
                 {
+                    _logger.LogWarning("Action Delete :: UsuariosController :: problema: Usuário não encontrado id: " + id + " executou em: " + DateTime.Now.ToString());
                     return NotFound();
                 }
                 _context.Usuarios.Remove(usuarioBuscado);
@@ -100,8 +104,8 @@ namespace SistemaDeCadastro.Controllers
                 return StatusCode((int)HttpStatusCode.NoContent);
             }
             catch (Exception ex)
-
             {
+                _logger.LogError("Action Delete :: UsuariosController :: problema: " + ex.ToString() + " executou em: " + DateTime.Now.ToString());
                 return BadRequest(ex);
             }
         }
