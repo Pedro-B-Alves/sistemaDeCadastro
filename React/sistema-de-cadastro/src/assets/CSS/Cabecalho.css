@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+.cabecalho{
+    width: 100vw;
+    height: 10vh;
+    background-color: #292929;
+    display: flex;
+    justify-content: center;
+}
+
+.conteudoCabecalho{
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgCabecalho{
+    width: 15vw;
+    height: 4vh;
+}
+
+.areaLink{
+    width: 15em;
+    height: 3vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linkCabecalho{
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: Lato;
+    font-size: 2vh;
+    font-weight: bold;
+    text-decoration: none;
+}

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+.rodape{
+    width: 100vw;
+    height: 10vh;
+    background-color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudoRodape{
+    font-family: Lato;
+    font-size: 1em;
+    font-weight: bold;
+    color: #FFFFFF;
+}
