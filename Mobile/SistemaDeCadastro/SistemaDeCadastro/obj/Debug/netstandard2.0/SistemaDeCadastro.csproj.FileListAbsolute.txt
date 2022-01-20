@@ -1,0 +1,15 @@
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\bin\Debug\netstandard2.0\SistemaDeCadastro.deps.json
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\bin\Debug\netstandard2.0\SistemaDeCadastro.dll
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\bin\Debug\netstandard2.0\ref\SistemaDeCadastro.dll
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\bin\Debug\netstandard2.0\SistemaDeCadastro.pdb
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\SistemaDeCadastro.csproj.AssemblyReference.cache
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\SistemaDeCadastro.GeneratedMSBuildEditorConfig.editorconfig
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\App.xaml.g.cs
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\SistemaDeCadastro.AssemblyInfoInputs.cache
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\SistemaDeCadastro.AssemblyInfo.cs
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\SistemaDeCadastro.csproj.CoreCompileInputs.cache
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\XamlC.stamp
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\SistemaDeCadastro.dll
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\ref\SistemaDeCadastro.dll
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\SistemaDeCadastro.pdb

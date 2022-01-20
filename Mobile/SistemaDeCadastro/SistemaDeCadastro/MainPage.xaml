@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaDeCadastro.MainPage"
+             Title="Cadastro">
+
+    <StackLayout>
+        <Frame BackgroundColor="#292929" Padding="15" CornerRadius="0">
+            <Image Source="logo.png"/>
+        </Frame>
+        <StackLayout Padding="80" Spacing="30">
+            <Label Text="Cadastro" FontSize="Title" Padding="30,10,30,10" HorizontalTextAlignment="Center" TextTransform="Uppercase" FontFamily="Raleway" FontAttributes="Bold"/>
+            <Entry x:Name="Nome" Placeholder="Nome" Keyboard="Chat" TextColor="#000000" ClearButtonVisibility="WhileEditing"/>
+            <DatePicker x:Name="Data" TextColor="#000000" Format="dd/MM/yyyy" MinimumDate="01/01/1970" MaximumDate="01/01/2100" />
+            <Picker x:Name="Sexo" Title=" Escolha o Sexo" HorizontalOptions="FillAndExpand" TitleColor="#000000">
+                <Picker.Items>
+                    <x:String>Masculino</x:String>
+                    <x:String>Feminino</x:String>
+                    <x:String>Outros</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Text="Cadastrar" BackgroundColor="#FA7B3B" TextColor="#FFFFFF" CornerRadius="10"/>
+        </StackLayout>
+        <Frame BackgroundColor="#292929" Padding="15" CornerRadius="0">
+            <Label Text="2022 © Intelitrader. Todos os direitos reservados." Padding="15" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontSize="12"/>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>

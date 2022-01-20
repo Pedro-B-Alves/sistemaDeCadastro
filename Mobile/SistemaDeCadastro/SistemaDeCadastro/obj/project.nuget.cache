@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "V4Zx+rSeDaNLGZv0MXOJSahcFnFb5bW7t54NhP6Ix589br/9Ms4JBgratjWhue8ROSM/Efsyc4R56LXHokXb7A==",
+  "success": true,
+  "projectFilePath": "A:\\Repositorios\\Meus Repositorios\\sistemaDeCadastro\\Mobile\\SistemaDeCadastro\\SistemaDeCadastro\\SistemaDeCadastro.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pedro\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}

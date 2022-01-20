@@ -50,7 +50,6 @@ A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro\obj\De
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro\obj\Debug\net5.0\SistemaDeCadastro.RazorAssemblyInfo.cache
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro\obj\Debug\net5.0\SistemaDeCadastro.RazorAssemblyInfo.cs
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro\obj\Debug\net5.0\staticwebassets\SistemaDeCadastro.StaticWebAssets.Manifest.cache
-A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro\obj\Debug\net5.0\staticwebassets\SistemaDeCadastro.StaticWebAssets.xml
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro\obj\Debug\net5.0\scopedcss\bundle\SistemaDeCadastro.styles.css
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro\obj\Debug\net5.0\SistemaDeCadastro.TagHelpers.input.cache
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro\obj\Debug\net5.0\SistemaDeCadastro.TagHelpers.output.cache
