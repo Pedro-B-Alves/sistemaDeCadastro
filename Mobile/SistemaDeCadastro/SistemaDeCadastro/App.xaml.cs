@@ -10,7 +10,7 @@ namespace SistemaDeCadastro
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SistemaDeCadastro.MainPage();
         }
 
         protected override void OnStart()

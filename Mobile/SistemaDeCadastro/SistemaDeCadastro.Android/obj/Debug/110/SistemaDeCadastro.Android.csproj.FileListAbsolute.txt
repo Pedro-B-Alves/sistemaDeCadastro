@@ -577,3 +577,8 @@ A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\Sis
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro.Android\obj\Debug\110\res\drawable\flecha.svg
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro.Android\obj\Debug\110\res\drawable\menu.svg
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro.Android\obj\Debug\110\res\drawable\logo.png
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro.Android\obj\Debug\110\android\assets\Newtonsoft.Json.dll
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro.Android\obj\Debug\110\android\assets\System.Net.Http.Extensions.dll
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro.Android\obj\Debug\110\android\assets\System.Net.Http.Primitives.dll
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro.Android\obj\Debug\110\android\assets\System.Net.Primitives.dll
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro.Android\obj\Debug\110\android\assets\System.Runtime.InteropServices.dll
