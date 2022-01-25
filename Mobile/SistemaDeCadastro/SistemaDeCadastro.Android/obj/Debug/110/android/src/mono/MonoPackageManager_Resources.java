@@ -5,6 +5,7 @@ public class MonoPackageManager_Resources {
 		"SistemaDeCadastro.Android.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
+		"Rg.Plugins.Popup.dll",
 		"SistemaDeCadastro.dll",
 		"System.Net.Http.Extensions.dll",
 		"System.Net.Http.Primitives.dll",

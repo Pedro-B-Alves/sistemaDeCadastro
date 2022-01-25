@@ -41,5 +41,15 @@ namespace SistemaDeCadastro
                     await DisplayAlert("Erro", ex.Message + " nome: "+novoUsuario.nome + " idade: " + novoUsuario.idade + " sexo: " + novoUsuario.sexo, "OK");
                 }
         }
+
+        async void btMudarPagList(object remetente, EventArgs e)
+        {
+            await Navigation.PushAsync(new ListPage());
+        }
+
+        async void btLogo(object remetente, EventArgs e)
+        {
+            await Navigation.PushAsync(new WelcomePage());
+        }
     }
 }

@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SistemaDeCadastro.MainPage">
+             x:Class="SistemaDeCadastro.MainPage"
+             Title="Cadastro">
 
     <StackLayout>
-        <Frame BackgroundColor="#292929" Padding="15" CornerRadius="0">
-            <Image Source="logo.png"/>
-        </Frame>
-        <StackLayout Padding="80" Spacing="30">
+        <StackLayout BackgroundColor="#292929" Padding="15" Orientation="Horizontal">
+            <ImageButton Source="logo.png" HorizontalOptions="StartAndExpand" BackgroundColor="#292929" Clicked="btLogo"/>
+            <ImageButton Source="lista.png"  Clicked="btMudarPagList" BackgroundColor="#292929" HorizontalOptions="End"/>
+        </StackLayout>
+        <StackLayout Padding="57" Spacing="26">
             <Label Text="Cadastro" FontSize="Title" Padding="30,10,30,10" HorizontalTextAlignment="Center" TextTransform="Uppercase" FontFamily="Raleway" FontAttributes="Bold"/>
             <Entry x:Name="txtNome" Placeholder="Nome" Keyboard="Chat" TextColor="#000000" ClearButtonVisibility="WhileEditing"/>
             <DatePicker x:Name="dtData" TextColor="#000000" Format="dd/MM/yyyy" MinimumDate="01/01/1970" MaximumDate="01/01/2100" />
@@ -21,7 +23,7 @@
             <Button Text="Cadastrar" BackgroundColor="#FA7B3B" TextColor="#FFFFFF" CornerRadius="10" Clicked="btnAdicionar_Clicked"/>
         </StackLayout>
         <Frame BackgroundColor="#292929" Padding="15" CornerRadius="0">
-            <Label Text="2022 © Intelitrader. Todos os direitos reservados." Padding="15" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontSize="12"/>
+            <Label Text="2022 © Intelitrader. Todos os direitos reservados." Padding="15" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontFamily="Lato" FontSize="12"/>
         </Frame>
     </StackLayout>
 

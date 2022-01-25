@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "l3/XF1ymBesS2mrzZE8Iwr57/2jPZHgEdxb82jBQCU81+EQ71YtYdMuvW1ooXPdTzYSa7uAhIBokxms7U3Gl3w==",
+  "dgSpecHash": "ezfYQqkkdWtxyblBFf2RY9m6JNX76qN8CCg+1oqnJR7KjtLiZRroOUSXlaCFQH2ua2aDdWQOxdJCwzggpRWkWA==",
   "success": true,
   "projectFilePath": "A:\\Repositorios\\Meus Repositorios\\sistemaDeCadastro\\Mobile\\SistemaDeCadastro\\SistemaDeCadastro.iOS\\SistemaDeCadastro.iOS.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.bcl.build\\1.0.14\\microsoft.bcl.build.1.0.14.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.net.http\\2.2.29\\microsoft.net.http.2.2.29.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\pedro\\.nuget\\packages\\rg.plugins.popup\\2.0.0.14\\rg.plugins.popup.2.0.0.14.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"

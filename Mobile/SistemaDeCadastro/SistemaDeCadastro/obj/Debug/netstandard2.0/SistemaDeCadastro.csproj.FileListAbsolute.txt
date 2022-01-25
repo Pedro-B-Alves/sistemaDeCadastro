@@ -14,3 +14,4 @@ A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\Sis
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\ref\SistemaDeCadastro.dll
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\SistemaDeCadastro.pdb
 A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\ListPage.xaml.g.cs
+A:\Repositorios\Meus Repositorios\sistemaDeCadastro\Mobile\SistemaDeCadastro\SistemaDeCadastro\obj\Debug\netstandard2.0\WelcomePage.xaml.g.cs

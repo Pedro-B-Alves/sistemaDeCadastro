@@ -37,7 +37,7 @@ namespace SistemaDeCadastro.Service
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception("Erro ao incluir usuário" + response);
+                    throw new Exception("Erro ao incluir usuário");
                 }
             }
             catch (Exception ex)
