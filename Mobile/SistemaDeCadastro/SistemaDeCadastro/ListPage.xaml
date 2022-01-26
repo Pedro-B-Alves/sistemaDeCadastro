@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SistemaDeCadastro.ListPage"
+             Title="Listagem">
+    <StackLayout>
+        <StackLayout BackgroundColor="#292929" Padding="15" Orientation="Horizontal" >
+            <ImageButton Source="logo.png" HorizontalOptions="StartAndExpand" BackgroundColor="#292929" Clicked="btLogo"/>
+            <ImageButton Source="cadastro.png"  Clicked="btMudarPagCad" BackgroundColor="#292929" HorizontalOptions="End"/>
+        </StackLayout>
+        <StackLayout x:Name="atualizarVis" Padding="25" Spacing="20">
+            <StackLayout Orientation="Horizontal" Spacing="50">
+                <Label Text="Altere os dados" FontSize="Title" TextTransform="Uppercase" FontFamily="Raleway" FontAttributes="Bold" Margin="75,0,0,0"/>
+                <ImageButton Source="x.png" BackgroundColor="#FFFFFF" Clicked="btFechaAtualiza"/>
+            </StackLayout>
+            <Entry x:Name="txtNome" Placeholder="Nome" Keyboard="Chat" TextColor="#000000" ClearButtonVisibility="WhileEditing"/>
+            <DatePicker x:Name="dtData" TextColor="#000000" Format="dd/MM/yyyy" MinimumDate="01/01/1970" MaximumDate="01/01/2100" />
+            <Picker x:Name="txtSexo" HorizontalOptions="FillAndExpand" TitleColor="#000000">
+                <Picker.Items>
+                    <x:String>Masculino</x:String>
+                    <x:String>Feminino</x:String>
+                    <x:String>Outros</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+    <StackLayout x:Name="listagemVis">
+        <StackLayout>
+            <ListView x:Name="listaUsuarios" ItemSelected="listaUsuarios_ItemSelected" BackgroundColor="#FFFFFF" SeparatorColor="#292929">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnAtualizar" CommandParameter="{Binding .}" Text="Atualizar"/>
+                                <MenuItem Clicked="OnDeletar" CommandParameter="{Binding .}" Text="Deletar" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <StackLayout Padding="10,10" Orientation="Horizontal" >
+                                <Label Text="{Binding nome, StringFormat='Nome: {0:F0}'}" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="{Binding idade, StringFormat='Data: {0:F0}'}" HorizontalOptions="Center" IsVisible="false"/>
+                                <Label Text="{Binding numIdade, StringFormat='Idade: {0:F0}'}" HorizontalOptions="Center" Margin="0,0,40,0"/>
+                                <Label Text="{Binding sexo, StringFormat='  Sexo: {0:F0}'}" HorizontalOptions="End"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+    <Frame BackgroundColor="#292929" Padding="15" CornerRadius="0">
+        <Label Text="2022 © Intelitrader. Todos os direitos reservados." Padding="15" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontFamily="Lato" FontSize="12"/>
+    </Frame>
+    </StackLayout>
+
+</ContentPage>
