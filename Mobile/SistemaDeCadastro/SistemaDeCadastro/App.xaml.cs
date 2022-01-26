@@ -10,7 +10,7 @@ namespace SistemaDeCadastro
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new WelcomePage());
+            MainPage = new NavigationPage(new WelcomePage()) { BarBackgroundColor = Color.FromHex("#000000") };
         }
 
         protected override void OnStart()

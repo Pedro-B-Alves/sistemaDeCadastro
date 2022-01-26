@@ -19,10 +19,13 @@ namespace SistemaDeCadastro
     {
         DataService dataService;
         List<Usuario> usuarios;
+        List<UsuarioExibir> usuariosExibir;
+        
         public ListPage()
         {
             InitializeComponent();
             dataService = new DataService();
+            
             AtualizaDados();
             atualizarVis.IsVisible = false;
             listagemVis.IsVisible = true;
@@ -30,8 +33,45 @@ namespace SistemaDeCadastro
 
         async void AtualizaDados()
         {
-            usuarios = await dataService.GetUserAsync();
-            listaUsuarios.ItemsSource = usuarios.ToList();
+            try
+            {
+                usuariosExibir = new List<UsuarioExibir>();
+                usuarios = await dataService.GetUserAsync();
+                foreach(Usuario cliente in usuarios)
+                {
+                    UsuarioExibir usuarioMod = new UsuarioExibir();
+                    if (cliente.nome == "")
+                    {
+                        continue;
+                    }
+                    usuarioMod.id = cliente.id;
+                    usuarioMod.nome = cliente.nome;
+                    usuarioMod.idade = cliente.idade;
+                    usuarioMod.numIdade = CalculaIdade(cliente.idade);
+                    usuarioMod.sexo = cliente.sexo;
+               
+                    usuariosExibir.Add(usuarioMod);
+
+                }
+
+                listaUsuarios.ItemsSource = usuariosExibir.ToList();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", ex.Message + usuariosExibir.ToList(), "OK");
+            }
+
+        }
+
+        private int CalculaIdade(string dataNascimento)
+        {
+            DateTime dataNas = Convert.ToDateTime(dataNascimento);
+            int idade = DateTime.Now.Year - dataNas.Year;
+            if(DateTime.Now.DayOfYear < dataNas.DayOfYear)
+            {
+                idade = idade - 1;
+            }
+            return idade;
         }
 
         private async void OnDeletar(object sender, EventArgs e)
@@ -39,8 +79,13 @@ namespace SistemaDeCadastro
             try
             {
                 var mi = ((MenuItem)sender);
-                Usuario usuarioDeletar = (Usuario)mi.CommandParameter;
-                await dataService.DeletaUserAsync(usuarioDeletar);
+                UsuarioExibir usuarioDeletar = (UsuarioExibir)mi.CommandParameter;
+                Usuario usuarioDel = new Usuario();
+                usuarioDel.id = usuarioDeletar.id;
+                usuarioDel.nome = usuarioDeletar.nome;
+                usuarioDel.idade = usuarioDeletar.idade;
+                usuarioDel.sexo = usuarioDeletar.sexo;
+                await dataService.DeletaUserAsync(usuarioDel);
                 AtualizaDados();
             }
             catch (Exception ex)
@@ -49,9 +94,9 @@ namespace SistemaDeCadastro
             }
         }
 
-        private void listaUsuarios_ItemSelected(object sender, ItemTappedEventArgs e)
+        private void listaUsuarios_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var usuario = e.Item as Usuario;
+            var usuario = e.SelectedItem as UsuarioExibir;
             txtNome.Text = usuario.nome;
             dtData.Date = Convert.ToDateTime(usuario.idade);
             txtSexo.SelectedItem = usuario.sexo;
@@ -64,13 +109,13 @@ namespace SistemaDeCadastro
             try
             {
                 var mi = ((MenuItem)sender);
-                Usuario usuarioAtualizar = (Usuario)mi.CommandParameter;
-
-                usuarioAtualizar.nome = txtNome.Text;
-                usuarioAtualizar.idade = dtData.Date.ToString("yyyy'-'MM'-'dd");
-                usuarioAtualizar.sexo = txtSexo.Items[txtSexo.SelectedIndex];
-
-                await dataService.UpdateUserAsync(usuarioAtualizar);
+                UsuarioExibir usuarioAtualizar = (UsuarioExibir)mi.CommandParameter;
+                Usuario usuarioAtu = new Usuario();
+                usuarioAtu.id = usuarioAtualizar.id;
+                usuarioAtu.nome = txtNome.Text;
+                usuarioAtu.idade = dtData.Date.ToString("yyyy'-'MM'-'dd");
+                usuarioAtu.sexo = txtSexo.Items[txtSexo.SelectedIndex];
+                await dataService.UpdateUserAsync(usuarioAtu);
 
                 AtualizaDados();
                 atualizarVis.IsVisible = false;

@@ -282,3 +282,7 @@ Information: 0 - Now listening on: http://192.168.0.104:5000
 Information: 0 - Application started. Press Ctrl+C to shut down.
 Information: 0 - Hosting environment: Development
 Information: 0 - Content root path: A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro
+Information: 0 - Now listening on: http://192.168.0.104:5000
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: A:\Repositorios\Meus Repositorios\sistemaDeCadastro\API\SistemaDeCadastro

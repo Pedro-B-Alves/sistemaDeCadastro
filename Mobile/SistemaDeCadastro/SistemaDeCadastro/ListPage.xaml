@@ -25,7 +25,7 @@
         </StackLayout>
     <StackLayout x:Name="listagemVis">
         <StackLayout>
-            <ListView x:Name="listaUsuarios" ItemTapped="listaUsuarios_ItemSelected" BackgroundColor="#FFFFFF" SeparatorColor="#292929">
+            <ListView x:Name="listaUsuarios" ItemSelected="listaUsuarios_ItemSelected" BackgroundColor="#FFFFFF" SeparatorColor="#292929">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -35,8 +35,9 @@
                             </ViewCell.ContextActions>
                             <StackLayout Padding="10,10" Orientation="Horizontal" >
                                 <Label Text="{Binding nome, StringFormat='Nome: {0:F0}'}" HorizontalOptions="StartAndExpand"/>
-                                    <Label Text="{Binding idade, StringFormat='Data: {0:F0}'}" HorizontalOptions="Center" />
-                                    <Label Text="{Binding sexo, StringFormat='  Sexo: {0:F0}'}" HorizontalOptions="End"/>
+                                <Label Text="{Binding idade, StringFormat='Data: {0:F0}'}" HorizontalOptions="Center" IsVisible="false"/>
+                                <Label Text="{Binding numIdade, StringFormat='Idade: {0:F0}'}" HorizontalOptions="Center" Margin="0,0,40,0"/>
+                                <Label Text="{Binding sexo, StringFormat='  Sexo: {0:F0}'}" HorizontalOptions="End"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -44,6 +45,9 @@
             </ListView>
         </StackLayout>
     </StackLayout>
+    <Frame BackgroundColor="#292929" Padding="15" CornerRadius="0">
+        <Label Text="2022 © Intelitrader. Todos os direitos reservados." Padding="15" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontFamily="Lato" FontSize="12"/>
+    </Frame>
     </StackLayout>
 
 </ContentPage>
